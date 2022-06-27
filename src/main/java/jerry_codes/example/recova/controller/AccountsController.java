@@ -1,7 +1,6 @@
 package jerry_codes.example.recova.controller;
 
 import jerry_codes.example.recova.entity.Account;
-import jerry_codes.example.recova.entity.Client;
 import jerry_codes.example.recova.model.AccountDto;
 import jerry_codes.example.recova.service.AccountService;
 import org.springframework.http.HttpStatus;
@@ -9,10 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
-@RequestMapping("acounts")
+@RequestMapping("accounts")
 public class AccountsController {
 
     private AccountService accountService;
