@@ -32,6 +32,9 @@ public class BankController {
         List<Bank> banks = bankService.findAll();
         return new ResponseEntity<>(banks, HttpStatus.OK);
     }
-
-
+    @GetMapping("/{id}")
+    public ResponseEntity<Bank> getBankById(@PathVariable("id") Long id){
+        Bank bank = bankService.findById(id);
+        return new ResponseEntity<>(bank, HttpStatus.OK);
+    }
 }
