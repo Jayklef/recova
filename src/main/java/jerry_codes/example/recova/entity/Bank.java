@@ -21,6 +21,6 @@ public class Bank {
     private String bankName;
     private String location;
 
-    @OneToMany(mappedBy = "banks")
+    @OneToMany(mappedBy = "bank")
     private Set<Client> clients;
 }

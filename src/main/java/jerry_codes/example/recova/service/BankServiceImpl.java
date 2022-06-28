@@ -37,4 +37,9 @@ public class BankServiceImpl implements BankService{
                 .sorted(Comparator.comparing(Bank::getBankName))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Bank findById(Long id) {
+        return bankRepository.findById(id).get();
+    }
 }

@@ -9,4 +9,6 @@ public interface BankService {
     Bank saveBank(Bank bank);
 
     List<Bank> findAll();
+
+    Bank findById(Long id);
 }
