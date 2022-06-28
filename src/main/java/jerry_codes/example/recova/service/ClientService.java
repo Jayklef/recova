@@ -4,7 +4,9 @@ import jerry_codes.example.recova.entity.Account;
 import jerry_codes.example.recova.entity.Client;
 import jerry_codes.example.recova.model.ClientDto;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public interface ClientService {
@@ -15,4 +17,6 @@ public interface ClientService {
     Client findClientByBvn(String BVN);
 
     Set<Account> findAllAccountsByIdAndBVN(Long id, String BVN);
+
+    Set<Map<String, BigDecimal>> findAllBalancesByBank(Long id);
 }

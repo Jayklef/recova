@@ -8,7 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -45,5 +47,11 @@ public class ClientController {
                                                                     String BVN){
         Set<Account> accounts = clientService.findAllAccountsByIdAndBVN(id, BVN);
         return new ResponseEntity<>(accounts, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public Set<Map<String, BigDecimal>> getAllClientsBankBalances(@PathVariable Long id){
+        Set<Map<String, BigDecimal>> clientBalances = clientService.findAllBalancesByBank(id);
+        return clientBalances;
     }
 }

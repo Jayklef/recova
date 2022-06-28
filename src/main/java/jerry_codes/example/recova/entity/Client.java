@@ -28,4 +28,8 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     private Set<Account> accounts;
+
+    @ManyToOne
+    @JoinColumn(name = "bank_id", nullable = false)
+    private Bank bank;
 }

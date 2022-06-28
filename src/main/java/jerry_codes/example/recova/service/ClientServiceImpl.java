@@ -7,6 +7,7 @@ import jerry_codes.example.recova.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -81,6 +82,21 @@ public class ClientServiceImpl implements ClientService {
                 .getAccounts()
                 .stream()
                 .sorted(Comparator.comparing(Account::getBank))
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Map<String, BigDecimal>> findAllBalancesByBank(Long id) {
+
+        Optional<Client> client = clientRepository.findById(id);
+
+        if (client.isEmpty()) {
+            throw new RuntimeException("Client not present" + id);
+        }
+
+        return client.get().getAccounts()
+                .stream()
+                .map(account -> Map.of(account.getBank(), account.getAccountBalance()))
                 .collect(Collectors.toSet());
     }
 }

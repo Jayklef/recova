@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,7 +16,11 @@ import javax.persistence.Id;
 public class Bank {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String bankName;
     private String location;
+
+    @OneToMany(mappedBy = "banks")
+    private Set<Client> clients;
 }
