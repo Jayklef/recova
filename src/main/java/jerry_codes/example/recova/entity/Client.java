@@ -1,6 +1,5 @@
 package jerry_codes.example.recova.entity;
 
-import jerry_codes.example.recova.entity.Account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,15 +20,9 @@ public class Client {
     private Long id;
     private String firstname;
     private String lastname;
-    private String phonenumber;
+    private String telephone;
     private String address;
-    private String NIN;
-    private String BVN;
+    private String nin;
+    private String bvn;
 
-    @OneToMany(mappedBy = "client")
-    private Set<Account> accounts;
-
-    @ManyToOne
-    @JoinColumn(name = "bank_id", nullable = false)
-    private Bank bank;
 }

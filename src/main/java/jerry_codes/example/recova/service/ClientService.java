@@ -1,6 +1,5 @@
 package jerry_codes.example.recova.service;
 
-import jerry_codes.example.recova.entity.Account;
 import jerry_codes.example.recova.entity.Client;
 import jerry_codes.example.recova.model.ClientDto;
 
@@ -10,13 +9,11 @@ import java.util.Map;
 import java.util.Set;
 
 public interface ClientService {
-    List<Client> findAllClient();
-
     Client saveClient(ClientDto clientDto);
 
-    Client findClientByBvn(String BVN);
+    List<Client> findAllClient();
 
-    Set<Account> findAllAccountsByIdAndBVN(Long id, String BVN);
+    Client updateClient(Long id, Client client);
 
-    Set<Map<String, BigDecimal>> findAllBalancesByBank(Long id);
+    Client findById(Long id);
 }

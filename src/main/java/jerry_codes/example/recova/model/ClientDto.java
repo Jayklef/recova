@@ -1,6 +1,5 @@
 package jerry_codes.example.recova.model;
 
-import jerry_codes.example.recova.entity.Account;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,11 +14,9 @@ public class ClientDto {
 
     private String firstname;
     private String lastname;
-    private String phonenumber;
+    private String telephone;
     private String address;
-    private String NIN;
-    private String BVN;
+    private String nin;
+    private String bvn;
 
-    @OneToMany(mappedBy = "client")
-    private Set<Account> accounts;
 }
