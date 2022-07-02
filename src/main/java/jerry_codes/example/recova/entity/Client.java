@@ -28,4 +28,8 @@ public class Client {
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private Set<BankAccount> accounts;
 
+    @ManyToOne
+    @JoinColumn(name = "debt_id")
+    private Debt debt;
+
 }
