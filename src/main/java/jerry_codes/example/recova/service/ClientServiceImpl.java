@@ -83,4 +83,10 @@ public class ClientServiceImpl implements ClientService{
         }
         return clientRepository.findById(id).get();
     }
+
+    @Override
+    public Client deleteById(Long id) {
+         clientRepository.deleteById(id);
+        return null;
+    }
 }

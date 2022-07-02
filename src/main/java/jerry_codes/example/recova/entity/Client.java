@@ -25,4 +25,7 @@ public class Client {
     private String nin;
     private String bvn;
 
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private Set<BankAccount> accounts;
+
 }
