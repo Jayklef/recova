@@ -11,8 +11,6 @@ import java.util.Date;
 import java.util.Set;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class DebtDto {
 
     private BigDecimal amount;
